@@ -278,7 +278,7 @@ def compnay_indices(ticker_name):
 # Comparison between Two comapnies (Monte Carlo Prediction)
 @app.route("/monteCarloCompany1/<ticker1>",methods=["GET"])
 def monte_carlo(ticker1):
-    response = requests.get("https://headstocksmontecarlobhavana.herokuapp.com/api/stocks/predict/"+int(ticker1))
+    response = requests.get("https://head-stocks-java.herokuapp.com/api/stocks/predict/"+int(ticker1))
     monteCarlo = pd.DataFrame();
     monteCarlo=response.json();
     sliced_arr=[]
@@ -321,7 +321,7 @@ def monte_carlo(ticker1):
 
 @app.route("/monteCarloCompany2/<ticker1>",methods=["GET"])
 def monte_carlo1(ticker1):
-    response = requests.get("https://headstocksmontecarlobhavana.herokuapp.com/api/stocks/predict/"+ticker1)
+    response = requests.get("https://head-stocks-java.herokuapp.com/api/stocks/predict/"+ticker1)
     monteCarlo=pd.DataFrame();
     monteCarlo=response.json();
     sliced_arr=[]

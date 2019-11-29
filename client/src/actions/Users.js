@@ -12,7 +12,7 @@ import {
   SELL_STOCKS
 } from "./Types";
 import axios from "axios";
-const url = "https://headstocksbhavana.herokuapp.com/api/users/";
+const url = "https://head-stocks-nodejs.herokuapp.com/api/users/";
 
 // Create a new user - Bhavana
 export const createUser = user => dispatch => {

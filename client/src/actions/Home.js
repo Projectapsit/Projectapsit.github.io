@@ -1,7 +1,7 @@
 import { ALL_NEWS, NEWS_BY_ID, GET_ALL_INDICES } from "./Types";
 import { startLoading, stopLoading } from "./LoadingAction";
 import axios from "axios";
-const url = "https://headstocksbhavana.herokuapp.com/api/home/";
+const url = "https://head-stocks-nodejs.herokuapp.com/api/home/";
 
 // get all news - piyush
 export const allNews = () => dispatch => {

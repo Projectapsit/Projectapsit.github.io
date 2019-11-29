@@ -7,7 +7,7 @@ import axios from "axios";
 export const searchContent = searchInput => dispatch => {
   return axios
     .post(
-      "https://headstocksbhavana.herokuapp.com/api/navbar/search",
+      "https://head-stocks-nodejs.herokuapp.com/api/navbar/search",
       searchInput
     )
     .then(res => {

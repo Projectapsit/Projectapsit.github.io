@@ -78,7 +78,7 @@
       <groupId>com.heroku.sdk</groupId>
       <artifactId>heroku-maven-plugin</artifactId>
       <configuration>
-        <appName>${heroku.headstocksmontecarlobhavana}</appName>
+        <appName>${heroku.headstocks-server-java}</appName>
         <processTypes>
           <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
         </processTypes>

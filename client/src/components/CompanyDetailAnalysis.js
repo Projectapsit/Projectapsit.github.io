@@ -102,20 +102,6 @@ export class CompanyDetailAnalysis extends Component {
           </div>
           {!this.props.isLoading ? (
             <div>
-              <div id="analysis-stock-chart">
-                {" "}
-                <p id="analysis_graph_title">Share Price Comparision</p>
-                <iframe
-                  id="assets1"
-                  src={this.props.sharePriceComparison}
-                  style={{
-                    width: "100%",
-                    height: "500px",
-                    outline: "none",
-                    border: "none"
-                  }}
-                />
-              </div>
               <div id="analysis-financial-positional-grid-container">
                 <div id="analysis-financial-positional-1">
                   <div id="stocks_assests">

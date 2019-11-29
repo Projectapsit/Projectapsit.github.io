@@ -406,7 +406,7 @@ def assets_Liabilities(ticker):
     fig.add_trace(go.Pie(labels=labels1, values=values1, name=""), 1, 2)
     fig.update_traces(hole=.5, hoverinfo="label+percent+name")
     fig.update_layout(showlegend=False,
-        title_text="Selected Assets to Liabilities",
+        title_text="Assets to Liabilities",
         annotations=[dict(text='Total Assets', x=0.18, y=0.5, font_size=12, showarrow=False),
                      dict(text='Total Liabilities', x=0.85, y=0.5, font_size=12, showarrow=False)])
     url=py.iplot(fig)
@@ -455,7 +455,7 @@ def assets_Liabilities1(ticker):
     fig.add_trace(go.Pie(labels=labels1, values=values1, name=""), 1, 2)
     fig.update_traces(hole=.5, hoverinfo="label+percent+name")
     fig.update_layout(showlegend=False,
-        title_text=ticker+"Assets to Liabilities",
+        title_text="Selected Ticker Assets to Liabilities",
         annotations=[dict(text='Total Assets', x=0.18, y=0.5, font_size=12, showarrow=False),
                      dict(text='Total Liabilities', x=0.85, y=0.5, font_size=12, showarrow=False)])
     url=py.iplot(fig)
@@ -610,7 +610,7 @@ def gaugeCompany2(ticker):
     liabilities=[]
     cashFlow=[]
     points = 0
-    indices = pd.DataFrame(list(collection.find({"ticker_name":ticker)},{"ticker_dates"}))
+    indices = pd.DataFrame(list(collection.find({"ticker_name":ticker},{"ticker_dates"})))
     for val in indices['ticker_dates'][0]:
         if('Net Profit' in val):
             netProfit.append(val['Net Profit'])

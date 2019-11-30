@@ -30,42 +30,38 @@ router.post("/screener", async (req, res, next) => {
   console.log("ebit1", ebit1);
   const ebit2 = req.body.ebit2;
   console.log("ebit2", ebit2);
-  const search_result = [];
-  var startDate = "2008-12-29T00:00:00.000+00:00";
-  var endDate = "2019-07-01T00:00:00.000+00:00";
   try {
     let result = await stocksData.find({
       "ticker_dates.date": {
-        $gte: new Date("2008-12-29"),
-        // $lte: new Date(endDate),
+        $gte: new Date("2008-12-29")
       },
       sector: sector,
       industry: industry,
 
       "ticker_dates.Share Price": {
         $lte: share_price2,
-        $gte: share_price1,
+        $gte: share_price1
       },
       "ticker_dates.Market Capitalisation": {
         $lte: market_cap_value2,
-        $gte: market_cap_value1,
+        $gte: market_cap_value1
       },
       "ticker_dates.EV / EBITDA": {
         $lte: ebit2,
-        $gte: ebit1,
+        $gte: ebit1
       },
       "ticker_dates.Total Assets": {
         $lte: +total_assests2,
-        $gte: +total_assests1,
+        $gte: +total_assests1
       },
       "ticker_dates.Revenues": {
         $lte: +revenue2,
-        $gte: +revenue1,
+        $gte: +revenue1
       },
       "ticker_dates.Net Profit": {
         $lte: +net_profit2,
-        $gte: +net_profit1,
-      },
+        $gte: +net_profit1
+      }
     });
     result.forEach(function(elem) {
       let compare = {};
@@ -136,13 +132,13 @@ router.post("/screener", async (req, res, next) => {
       res.status(400).json({
         status: 400,
         data: screener_data,
-        message: "No result",
+        message: "No result"
       });
     } else {
       res.status(200).json({
         status: 200,
         data: screener_data,
-        message: "Retrieved screener result successfully",
+        message: "Retrieved screener result successfully"
       });
     }
   } catch {

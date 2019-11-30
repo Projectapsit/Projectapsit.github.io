@@ -5,7 +5,7 @@ import {
   DOWNLOAD
 } from "./Types";
 import axios from "axios";
-const url = "https://head-stocks-nodejs.herokuapp.com/api/indicesprofile/";
+const url = "https://localhost:2001/api/indicesprofile/";
 
 // GET all companies- Bhavana
 export const getIndicesById = index => dispatch => {

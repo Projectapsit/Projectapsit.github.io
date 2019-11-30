@@ -7,7 +7,7 @@ import {
 } from "./Types";
 import { startLoading, stopLoading } from "./LoadingAction";
 import axios from "axios";
-const url = "https://head-stocks-nodejs.herokuapp.com/api/sector/";
+const url = "https://localhost:2001/api/sector/";
 
 // GET companies by sector and industry
 export const getCompany = (filter, type) => dispatch => {
@@ -108,10 +108,7 @@ export const getScreenerSearch = (
   };
   console.log("from screener search actions", values);
   return axios
-    .post(
-      "https://head-stocks-nodejs.herokuapp.com/api/screener/screener",
-      values
-    )
+    .post("https://localhost:2001/api/screener/screener", values)
     .then(res => {
       dispatch({
         type: SCREENER_SEARCH,

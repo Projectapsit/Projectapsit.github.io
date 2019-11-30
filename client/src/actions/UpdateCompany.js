@@ -6,11 +6,7 @@ import axios from "axios";
 export const updateCompany = (data, id) => dispatch => {
   try {
     return axios
-      .post(
-        "https://head-stocks-nodejs.herokuapp.com/api/upload/updateCompany/" +
-          id,
-        data
-      )
+      .post("https://localhost:2001/api/upload/updateCompany/" + id, data)
       .then(res => {
         dispatch({
           type: UPDATE_COMPANY,

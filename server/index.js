@@ -3,7 +3,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 const config = require("config");
-var mongodb = config.get("mongourl");
+var mongodb =
+  "mongodb+srv://headstrait_1:headstrait_1@cluster0-lxitk.mongodb.net/stockbazaar";
 mongoose.connect(mongodb);
 const app = express();
 const users = require("./routes/api/Users");

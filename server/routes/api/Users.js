@@ -127,7 +127,7 @@ router.post("/send_otp", async (req, res, next) => {
       service: "Gmail",
       auth: {
         user: "bhavanagupta250@gmail.com ",
-        pass: config.get("password")
+        pass: "guptabhavana250"
       }
     });
 

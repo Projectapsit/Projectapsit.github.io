@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import "../styles/Kafka.css";
+import axios from "axios";
 var stompClient = null;
 const Stomp = require("stompjs");
 
@@ -13,6 +14,7 @@ export default class Kafka extends Component {
   };
 
   componentDidMount() {
+    axios.get("https://kafkaproducerbhavana.herokuapp.com/");
     //here we did the connection with consumer with the help of stockjs
     SockJS = new SockJS("https://head-stocks-kafka-consumer.herokuapp.com/ws");
 

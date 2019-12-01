@@ -26,11 +26,10 @@ export class CompanyDetailAnalysis extends Component {
     this.props.getCompanyDetailById(id);
     this.props.getGaugeCompany1(this.props.match.params.id);
     this.props.getGaugeCompany2("ACN");
-    this.props.getAssetsCompany1(this.props.match.params.id);
+    this.props.getAssetsCompany1(id);
     this.props.getAssetsCompany2("ACN");
     this.props.getmonteCarloCompany1("AAPL");
     this.props.getmonteCarloCompany2("ACN");
-    this.props.sharePriceComparison(this.props.match.params.id, "ACN");
   }
 
   //function that would change the state value with the value selected and inside which the action function will be called and that ticker name will passed
@@ -107,7 +106,7 @@ export class CompanyDetailAnalysis extends Component {
                   <div id="stocks_assests">
                     <iframe
                       id="assets1"
-                      src="https://plot.ly/~nikhile/432.embed"
+                      src={this.props.monteCarlo1}
                       style={{
                         width: "650px",
                         height: "500px",
@@ -119,7 +118,7 @@ export class CompanyDetailAnalysis extends Component {
                 </div>
                 <div id="analysis-financial-positional-2">
                   <iframe
-                    src="https://plot.ly/~nikhile/434.embed"
+                    src={this.props.monteCarlo2}
                     style={{
                       width: "650px",
                       height: "500px",
@@ -157,7 +156,7 @@ export class CompanyDetailAnalysis extends Component {
                   <div id="stocks_assests">
                     <iframe
                       id="assets1"
-                      src="https://plot.ly/~nikhile/428.embed"
+                      src={this.props.assets1}
                       style={{
                         width: "650px",
                         height: "500px",
@@ -169,7 +168,7 @@ export class CompanyDetailAnalysis extends Component {
                 </div>
                 <div id="analysis-financial-positional-2">
                   <iframe
-                    src="https://plot.ly/~nikhile/430.embed"
+                    src={this.props.assets2}
                     style={{
                       width: "650px",
                       height: "500px",

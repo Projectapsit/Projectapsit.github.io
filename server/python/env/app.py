@@ -25,7 +25,8 @@ from matplotlib import pyplot as plt
 import numpy as np
 from matplotlib.patches import Circle, Wedge, Rectangle
 # py.sign_in('nikhile' ,'OkrregXQ8kgWtuZEcuOI')
-py.sign_in('aditya2019','O1AXV3C7JqJm5D2egggr')
+# py.sign_in('aditya2019','O1AXV3C7JqJm5D2egggr')
+py.sign_in('ittigupta05','3rdgZUfOzlVuGQcNeefv')
 
 
 # In[ ]:
@@ -98,9 +99,9 @@ def ohlc_indices(ticker_id):
                     high=indexDate['high'],
                     low=indexDate['low'],
                     close=indexDate['close']),layout=layout)
-    url=py.iplot(fig)
-    print(url.src)
-    return (url.src)
+    url=py.plot(fig)
+    print(url)
+    return (url)
 
 
 @app.route("/shareprice/<ticker1>/<ticker2>",methods=["GET"])
@@ -193,9 +194,9 @@ def stock_chart(ticker1,ticker2):
 
     data = [trace2,trace1]
     fig = dict(data=data,layout=layout)
-    url=py.iplot(fig)
-    print(url.src)
-    return(url.src)
+    url=py.plot(fig)
+    print(url)
+    return(url)
 
 
 # Company OHLC Graph
@@ -271,14 +272,14 @@ def compnay_indices(ticker_name):
                     high=companyDate['high'],
                     low=companyDate['low'],
                     close=companyDate['close']),layout=layout)
-    url=py.iplot(fig)
-    print(url.src)
-    return(url.src)
+    url=py.plot(fig)
+    print(url)
+    return(url)
 
 # Comparison between Two comapnies (Monte Carlo Prediction)
 @app.route("/monteCarloCompany1/<ticker1>",methods=["GET"])
 def monte_carlo(ticker1):
-    response = requests.get("https://head-stocks-java.herokuapp.com/api/stocks/predict/"+int(ticker1))
+    response = requests.get("https://headstocksmontecarlobhavana.herokuapp.com//api/stocks/predict/"+ticker1)
     monteCarlo = pd.DataFrame();
     monteCarlo=response.json();
     sliced_arr=[]
@@ -315,13 +316,13 @@ def monte_carlo(ticker1):
     fig.update_xaxes(showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=False, zeroline=False)
     fig.update_layout(showlegend=False)
-    url=py.iplot(fig)
-    print(url.src)
-    return(url.src)
+    url=py.plot(fig)
+    print(url)
+    return(url)
 
 @app.route("/monteCarloCompany2/<ticker1>",methods=["GET"])
 def monte_carlo1(ticker1):
-    response = requests.get("https://head-stocks-java.herokuapp.com/api/stocks/predict/"+ticker1)
+    response = requests.get("https://headstocksmontecarlobhavana.herokuapp.com/api/stocks/predict/"+ticker1)
     monteCarlo=pd.DataFrame();
     monteCarlo=response.json();
     sliced_arr=[]
@@ -358,9 +359,9 @@ def monte_carlo1(ticker1):
     fig.update_xaxes(showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=False, zeroline=False)
     fig.update_layout(showlegend=False)
-    url=py.iplot(fig)
-    print(url.src)
-    return(url.src)
+    url=py.plot(fig)
+    print(url)
+    return(url)
     
 
 # Comparison for Assests and Liabilities Graph of two Companies
@@ -409,9 +410,12 @@ def assets_Liabilities(ticker):
         title_text="Assets to Liabilities",
         annotations=[dict(text='Total Assets', x=0.18, y=0.5, font_size=12, showarrow=False),
                      dict(text='Total Liabilities', x=0.85, y=0.5, font_size=12, showarrow=False)])
-    url=py.iplot(fig)
-    print(url.src)
-    return (url.src)
+    fig.show(config={
+    'scrollZoom': False,
+    'displayModeBar': False,
+    'editable': False})
+    url = py.plot(fig)  
+    return(url)
 
 @app.route("/assetsCompany2/<ticker>",methods=["GET"])
 def assets_Liabilities1(ticker):
@@ -458,9 +462,9 @@ def assets_Liabilities1(ticker):
         title_text="Selected Ticker Assets to Liabilities",
         annotations=[dict(text='Total Assets', x=0.18, y=0.5, font_size=12, showarrow=False),
                      dict(text='Total Liabilities', x=0.85, y=0.5, font_size=12, showarrow=False)])
-    url=py.iplot(fig)
-    print(url.src)
-    return (url.src)
+    url=py.plot(fig)
+    print(url)
+    return (url)
 
 
 # Recommendations Graph for Comparison fro both companies

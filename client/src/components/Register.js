@@ -73,6 +73,7 @@ export class Register extends Component {
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.validateForm();
   };
 
   // Validating the input form

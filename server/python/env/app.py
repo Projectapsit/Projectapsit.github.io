@@ -100,8 +100,11 @@ def ohlc_indices(ticker_id):
                     low=indexDate['low'],
                     close=indexDate['close']),layout=layout)
     url=py.plot(fig)
-    print(url)
-    return (url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
 
 
 @app.route("/shareprice/<ticker1>/<ticker2>",methods=["GET"])
@@ -192,11 +195,13 @@ def stock_chart(ticker1,ticker2):
     
     )
 
-    data = [trace2,trace1]
-    fig = dict(data=data,layout=layout)
     url=py.plot(fig)
-    print(url)
-    return(url)
+#     print(url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
 
 
 # Company OHLC Graph
@@ -273,8 +278,12 @@ def compnay_indices(ticker_name):
                     low=companyDate['low'],
                     close=companyDate['close']),layout=layout)
     url=py.plot(fig)
-    print(url)
-    return(url)
+#     print(url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
 
 # Comparison between Two comapnies (Monte Carlo Prediction)
 @app.route("/monteCarloCompany1/<ticker1>",methods=["GET"])
@@ -317,8 +326,12 @@ def monte_carlo(ticker1):
     fig.update_yaxes(showgrid=False, zeroline=False)
     fig.update_layout(showlegend=False)
     url=py.plot(fig)
-    print(url)
-    return(url)
+#     print(url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
 
 @app.route("/monteCarloCompany2/<ticker1>",methods=["GET"])
 def monte_carlo1(ticker1):
@@ -360,8 +373,12 @@ def monte_carlo1(ticker1):
     fig.update_yaxes(showgrid=False, zeroline=False)
     fig.update_layout(showlegend=False)
     url=py.plot(fig)
-    print(url)
-    return(url)
+#     print(url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
     
 
 # Comparison for Assests and Liabilities Graph of two Companies
@@ -414,8 +431,13 @@ def assets_Liabilities(ticker):
     'scrollZoom': False,
     'displayModeBar': False,
     'editable': False})
-    url = py.plot(fig)  
-    return(url)
+    url=py.plot(fig)
+#     print(url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
 
 @app.route("/assetsCompany2/<ticker>",methods=["GET"])
 def assets_Liabilities1(ticker):
@@ -463,8 +485,12 @@ def assets_Liabilities1(ticker):
         annotations=[dict(text='Total Assets', x=0.18, y=0.5, font_size=12, showarrow=False),
                      dict(text='Total Liabilities', x=0.85, y=0.5, font_size=12, showarrow=False)])
     url=py.plot(fig)
-    print(url)
-    return (url)
+#     print(url)
+    print(url+".embed?autosize=true&modebar=false&link=false")
+    url1Text=url
+    head, sep, tail = url1Text.partition('.e')
+    print("removed embed part", head+".embed?autosize=true&modebar=false&link=false")
+    return (head+".embed?autosize=true&modebar=false&link=false")
 
 
 # Recommendations Graph for Comparison fro both companies

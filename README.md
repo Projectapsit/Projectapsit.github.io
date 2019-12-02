@@ -83,7 +83,7 @@ It contains all the files which would be required to run monte carlo simulation.
 
 OR
 
-**To run the project server in Visual Studio use 'CtrlF5' and the server will start running**
+**To run the project server in Visual Studio use 'Ctrl+F5' and the server will start running**
 
 ```
 
@@ -97,7 +97,9 @@ OR
 
 OR
 
-**To run the project server in Visual Studio use 'CtrlF5' and the server will start running**
+**To run the project server in Visual Studio use 'Ctrl+F5' and the server will start running**
+
+#
 
 ## Kafka Consumer
 
@@ -105,7 +107,9 @@ OR
 
 OR
 
-**To run the project server in Visual Studio use 'CtrlF5' and the server will start running**
+**To run the project server in Visual Studio use 'Ctrl+F5' and the server will start running**
+
+#
 
 ## Client
 
